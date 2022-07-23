@@ -1,0 +1,2 @@
+# snapfire-shop
+ Redux store
