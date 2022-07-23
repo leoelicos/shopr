@@ -1,15 +1,5 @@
-import { reducer } from '../utils/reducers';
-import {
-  UPDATE_PRODUCTS,
-  ADD_TO_CART,
-  UPDATE_CART_QUANTITY,
-  REMOVE_FROM_CART,
-  ADD_MULTIPLE_TO_CART,
-  UPDATE_CATEGORIES,
-  UPDATE_CURRENT_CATEGORY,
-  CLEAR_CART,
-  TOGGLE_CART
-} from '../utils/actions';
+import reducer from '../utils/reducers';
+import { UPDATE_PRODUCTS, ADD_TO_CART, UPDATE_CART_QUANTITY, REMOVE_FROM_CART, ADD_MULTIPLE_TO_CART, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY, CLEAR_CART, TOGGLE_CART } from '../utils/actions';
 
 const initialState = {
   products: [],
@@ -27,7 +17,7 @@ const initialState = {
   ],
   cartOpen: false,
   categories: [{ name: 'Food' }],
-  currentCategory: '1',
+  currentCategory: '1'
 };
 
 test('UPDATE_PRODUCTS', () => {
@@ -131,7 +121,7 @@ test('TOGGLE_CART', () => {
 
   expect(newState.cartOpen).toBe(true);
   expect(initialState.cartOpen).toBe(false);
-  
+
   let newState2 = reducer(newState, {
     type: TOGGLE_CART
   });
