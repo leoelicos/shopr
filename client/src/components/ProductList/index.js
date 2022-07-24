@@ -35,10 +35,9 @@ function ProductList() {
   }, [data, loading, dispatch]);
 
   function filterProducts() {
-    if (!currentCategory) {
-      return state.products;
-    }
-
+    // No category is selected. Return all products.
+    if (!currentCategory) return state.products;
+    // A category is selected. Display products from this category.
     return state.products.filter((product) => product.category._id === currentCategory);
   }
 
