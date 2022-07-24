@@ -22,7 +22,7 @@ export function register(config) {
   console.log('function register');
   console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
   console.log('navigator: ', navigator);
-
+  console.log('process.env.PUBLIC_URL: ', process.env.PUBLIC_URL);
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
 
