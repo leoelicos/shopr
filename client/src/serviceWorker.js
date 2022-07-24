@@ -19,10 +19,16 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
+  console.log('function register');
+  console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
+  console.log('navigator: ', navigator);
+
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
 
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+    console.log('publicUrl = ', publicUrl);
+
     if (publicUrl.origin !== window.location.origin) {
       console.log('bug1');
       // Our service worker won't work if PUBLIC_URL is on a different origin
