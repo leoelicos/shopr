@@ -30,8 +30,19 @@ export const ADD_ORDER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
-    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+  mutation addUser($input: UserInput!) {
+    addUser(input: $input) {
+      token
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($input: UserInput!) {
+    updateUser(input: $input) {
       token
       user {
         _id
