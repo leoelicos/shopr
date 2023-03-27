@@ -1,43 +1,47 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { useDispatch, useSelector } from 'react-redux';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
+import React, { useEffect } from 'react'
+import { useQuery } from '@apollo/client'
+import { useDispatch, useSelector } from 'react-redux'
+import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions'
+import { QUERY_CATEGORIES } from '../../utils/queries'
+import { idbPromise } from '../../utils/helpers'
 
 function CategoryMenu() {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const dispatch = useDispatch()
+  const state = useSelector((state) => state)
 
-  const { categories } = state;
+  const { categories } = state
 
-  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
 
   useEffect(() => {
+    /* there is data from the server */
     if (categoryData) {
       dispatch({
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories
-      });
+      })
       categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
-      });
+        idbPromise('categories', 'put', category)
+      })
     } else if (!loading) {
+    /* there is no data from the server */
+    /* it is not in a loading state */
+    /* load any data from indexedDB */
       idbPromise('categories', 'get').then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,
           categories: categories
-        });
-      });
+        })
+      })
     }
-  }, [categoryData, loading, dispatch]);
+  }, [categoryData, loading, dispatch])
 
   const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
       currentCategory: id
-    });
-  };
+    })
+  }
 
   return (
     <div>
@@ -46,14 +50,13 @@ function CategoryMenu() {
         <button
           key={item._id}
           onClick={() => {
-            handleClick(item._id);
-          }}
-        >
+            handleClick(item._id)
+          }}>
           {item.name}
         </button>
       ))}
     </div>
-  );
+  )
 }
 
-export default CategoryMenu;
+export default CategoryMenu
