@@ -1,4 +1,4 @@
-# Snapfire Shop
+# Shopr
 
 ![react](https://img.shields.io/badge/17.0.1-0?label=react.js&style=for-the-badge&labelColor=white&color=black) ![apollo client](https://img.shields.io/badge/3.5.8-0?label=@apollo/client&style=for-the-badge&labelColor=white&color=black) ![apollo server express](https://img.shields.io/badge/3.10.0-0?label=@apollo%20server%20express&style=for-the-badge&labelColor=white&color=black) ![graphql](https://img.shields.io/badge/15.4.0-0?label=graphql&style=for-the-badge&labelColor=white&color=black)
 
@@ -14,16 +14,16 @@ I made this app in order to learn how to implement Redux on the back end.
 
 ## Usage
 
-- The app is deployed at https://leoelicos-one-stop-shop.herokuapp.com/
-- The repo is at https://github.com/leoelicos/one-stop-shop
+- The app is deployed at https://shpr.herokuapp.com/
+- The repo is at https://github.com/leoelicos/shopr
 
 ## Development and Testing
 
 ### Download Node: https://nodejs.org/en/download/
 
 ```sh
-git clone https://github.com/leoelicos/one-stop-shop.git
-cd one-stop-shop
+git clone https://github.com/leoelicos/shopr.git
+cd shopr
 npm install
 npm run develop
 ```
