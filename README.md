@@ -6,7 +6,7 @@
 
 This seven-page web app was an exercise in the appreciation of Redux, usually used with large web applications using complex state, requiring a refactor from an app using React Context API into Redux. It features a Store with React and Redux and Apollo client front-end and Apollo Server and Graph QL backend. The app allows users to login and save items to their shopping list without refreshing the page. They can also filter items by category by clicking on filters. They can also pay with Stripe using a credit card.
 
-On the front end, this Node application uses npm packages `@apollo/client`, `react`, , `redux` and `react-redux`.
+On the front end, this Node application uses npm packages `@apollo/client`, `react`, `redux` and `react-redux`.
 
 On the back end, this application uses npm packages `apollo-server-express`, `graphql`, `jsonwebtoken` and `mongoose`.
 
