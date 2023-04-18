@@ -1,7 +1,7 @@
 import React from 'react'
 import Auth from '../../utils/auth'
 import { Link } from 'react-router-dom'
-
+import logo from './shopr.png'
 function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -35,15 +35,24 @@ function Nav() {
   }
 
   return (
-    <header className='flex-row px-1'>
+    <header
+      className='flex-row px-1'
+      style={{ display: 'flex', alignItems: 'center' }}>
       <h1>
-        <Link to='/'>
+        <Link
+          to='/'
+          style={{ display: 'flex', alignItems: 'center' }}>
           <span
             role='img'
-            aria-label='shopping bag'>
-            🛍️
+            aria-label='shopping bag'
+            style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              src={logo}
+              alt='logo'
+              style={{ height: '55px', marginRight: '4px' }}
+            />
           </span>
-          shopr
+          <span style={{ color: '#FF9500', display: 'flex', alignItems: 'center' }}>shopr</span>
         </Link>
       </h1>
 
